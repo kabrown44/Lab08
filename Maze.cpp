@@ -75,22 +75,22 @@ bool Maze::traverse(int row, int col)
 
          if(traverse(row+1,col))
          {
-            done = traverse(row+1,col);
+            done = true;
          }
 
          else if (traverse(row, col+1))
          {
-            done = traverse(row, col+1);
+            done = true;
          }
 
-         else if (maze->getElement(row-1, col) == SPACE)
+         else if (traverse(row-1, col))
          {
-            done = traverse(row-1, col);
+            done = true;
          }
 
-         else if (maze->getElement(row, col-1) == SPACE)
+         else if (traverse(row, col-1))
          {
-            done = traverse(row, col-1);
+            done = true;
          }
 
 
