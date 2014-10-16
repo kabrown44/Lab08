@@ -73,12 +73,12 @@ bool Maze::traverse(int row, int col)
 
 
 
-         if(maze->getElement(row+1, col) == SPACE)
+         if(traverse(row+1,col))
          {
             done = traverse(row+1,col);
          }
 
-         else if (maze->getElement(row, col+1) == SPACE)
+         else if (traverse(row, col+1))
          {
             done = traverse(row, col+1);
          }
@@ -112,6 +112,7 @@ bool Maze::traverse(int row, int col)
       else
       {
          //DO THIS
+
          maze->setElement(row, col, BACKTRACK);
 
 
